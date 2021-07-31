@@ -1,0 +1,31 @@
+@startuml
+
+class DataAnalysisCLI
+class DataFrame
+class DataSeries
+class IBasicStats
+class KeyboardReader
+
+DataAnalysisCLI --> DataFrame: "uses"
+DataAnalysisCLI --> DataSeries: "uses"
+DataAnalysisCLI --> KeyboardReader: "uses"
+DataFrame --> DataSeries: "uses"
+DataSeries ..|> IBasicStats: "implements"
+
+@enduml
+
+@startuml
+
+class DataAnalysisCLI
+class DataFrame
+class DataSeries
+class IBasicStats
+class KeyboardReader
+
+DataAnalysisCLI *-- DataFrame: "owns"
+DataAnalysisCLI o-- DataSeries: "has-a"
+DataAnalysisCLI *--> KeyboardReader: "owns"
+DataFrame --> DataSeries: "uses"
+DataSeries ..|> IBasicStats: "implements"
+
+@enduml
